@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CodeAlpha - E-Commerce Store</title>
+    <!-- CSS style file connection -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- Header & Navigation Bar -->
+    <header class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <i class="fa-solid class fa-bag-shopping"></i> ShopAlpha
+            </a>
+            
+            <div class="search-bar">
+                <input type="text" id="searchInput" placeholder="Search products...">
+                <button type="button"><i class="fa-solid fa-magnifying-glass"></i></button>
+            </div>
+
+            <nav class="nav-links">
+                <a href="index.html" class="active"><i class="fa-solid fa-house"></i> Home</a>
+                <a href="login.html" id="authLink"><i class="fa-solid fa-user"></i> Login</a>
+                <a href="cart.html" class="cart-icon">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <span id="cartCount">0</span>
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Banner -->
+    <section class="hero">
+        <div class="container hero-content">
+            <h1>Welcome to Our Modern Online Store!</h1>
+            <p>Find the best electronic products at competitive prices right here.</p>
+            <a href="#products" class="btn-primary">Shop Now</a>
+        </div>
+    </section>
+
+    <!-- Main Products Section -->
+    <main class="container my-5" id="products">
+        <h2 class="section-title">Featured Products</h2>
+
+        <!-- Product Cards Grid Container -->
+        <div class="product-grid" id="productGrid">
+            
+            <!-- Sample Product Card 1 -->
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://via.placeholder.com/250x200?text=Wireless+Headphones" alt="Wireless Headphones">
+                </div>
+                <div class="product-info">
+                    <span class="category">Electronics</span>
+                    <h3 class="product-title">Wireless Headphones</h3>
+                    <p class="price">$49.99</p>
+                    <div class="product-buttons">
+                        <a href="product-detail.html?id=1" class="btn-secondary">
+                            <i class="fa-solid fa-eye"></i> Details
+                        </a>
+                        <button class="btn-add-cart" onclick="addToCart(1)">
+                            <i class="fa-solid fa-cart-plus"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sample Product Card 2 -->
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://via.placeholder.com/250x200?text=Smart+Watch" alt="Smart Watch">
+                </div>
+                <div class="product-info">
+                    <span class="category">Electronics</span>
+                    <h3 class="product-title">Smart Watch Series 5</h3>
+                    <p class="price">$89.99</p>
+                    <div class="product-buttons">
+                        <a href="product-detail.html?id=2" class="btn-secondary">
+                            <i class="fa-solid fa-eye"></i> Details
+                        </a>
+                        <button class="btn-add-cart" onclick="addToCart(2)">
+                            <i class="fa-solid fa-cart-plus"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sample Product Card 3 -->
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://via.placeholder.com/250x200?text=Gaming+Laptop" alt="Gaming Laptop">
+                </div>
+                <div class="product-info">
+                    <span class="category">Computer</span>
+                    <h3 class="product-title">Gaming Laptop 15"</h3>
+                    <p class="price">$999.99</p>
+                    <div class="product-buttons">
+                        <a href="product-detail.html?id=3" class="btn-secondary">
+                            <i class="fa-solid fa-eye"></i> Details
+                        </a>
+                        <button class="btn-add-cart" onclick="addToCart(3)">
+                            <i class="fa-solid fa-cart-plus"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sample Product Card 4 -->
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://via.placeholder.com/250x200?text=Ergonomic+Chair" alt="Ergonomic Chair">
+                </div>
+                <div class="product-info">
+                    <span class="category">Furniture</span>
+                    <h3 class="product-title">Ergonomic Office Chair</h3>
+                    <p class="price">$129.99</p>
+                    <div class="product-buttons">
+                        <a href="product-detail.html?id=4" class="btn-secondary">
+                            <i class="fa-solid fa-eye"></i> Details
+                        </a>
+                        <button class="btn-add-cart" onclick="addToCart(4)">
+                            <i class="fa-solid fa-cart-plus"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <p>&copy; 2026 CodeAlpha Internship Project. All Rights Reserved.</p>
+            <p>Designed by Mintamir Mengistu</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript File Connection -->
+    <script src="js/main.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/auth.js"></script>
+</body>
+</html>

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShopAlpha - Shopping Cart</title>
+    <!-- CSS Link -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- Header / Navigation Bar -->
+    <header class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <i class="fa-solid fa-bag-shopping"></i> ShopAlpha
+            </a>
+            <nav class="nav-links">
+                <a href="index.html"><i class="fa-solid fa-house"></i> Home</a>
+                <a href="login.html" id="authLink"><i class="fa-solid fa-user"></i> Login</a>
+                <a href="cart.html" class="cart-icon active">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <span id="cartCount">0</span>
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Cart Page Main Container -->
+    <main class="container my-5">
+        <h2 class="section-title">Your Shopping Cart</h2>
+
+        <div class="cart-layout">
+            <!-- Left Side: Cart Items List -->
+            <div class="cart-items-container" id="cartItemsContainer">
+                <table class="cart-table">
+                    <thead>
+                        <tr>
+                            <th>Product</th>
+                            <th>Price</th>
+                            <th>Quantity</th>
+                            <th>Subtotal</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="cartTableBody">
+                        <!-- Sample Cart Item 1 -->
+                        <tr>
+                            <td class="product-col">
+                                <img src="https://via.placeholder.com/80?text=Headphones" alt="Headphones">
+                                <span>Wireless Headphones</span>
+                            </td>
+                            <td>$49.99</td>
+                            <td>
+                                <div class="qty-control">
+                                    <button class="qty-btn" onclick="updateQuantity(1, -1)">-</button>
+                                    <span>1</span>
+                                    <button class="qty-btn" onclick="updateQuantity(1, 1)">+</button>
+                                </div>
+                            </td>
+                            <td>$49.99</td>
+                            <td>
+                                <button class="btn-remove" onclick="removeItem(1)">
+                                    <i class="fa-solid fa-trash"></i>
+                                </button>
+                            </td>
+                        </tr>
+
+                        <!-- Sample Cart Item 2 -->
+                        <tr>
+                            <td class="product-col">
+                                <img src="https://via.placeholder.com/80?text=Smart+Watch" alt="Smart Watch">
+                                <span>Smart Watch Series 5</span>
+                            </td>
+                            <td>$89.99</td>
+                            <td>
+                                <div class="qty-control">
+                                    <button class="qty-btn" onclick="updateQuantity(2, -1)">-</button>
+                                    <span>2</span>
+                                    <button class="qty-btn" onclick="updateQuantity(2, 1)">+</button>
+                                </div>
+                            </td>
+                            <td>$179.98</td>
+                            <td>
+                                <button class="btn-remove" onclick="removeItem(2)">
+                                    <i class="fa-solid fa-trash"></i>
+                                </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Right Side: Order Summary -->
+            <div class="order-summary-card">
+                <h3>Order Summary</h3>
+                <hr>
+                <div class="summary-row">
+                    <span>Items Subtotal:</span>
+                    <span id="subtotalPrice">$229.97</span>
+                </div>
+                <div class="summary-row">
+                    <span>Shipping Fee:</span>
+                    <span>Free</span>
+                </div>
+                <hr>
+                <div class="summary-row total-row">
+                    <span>Total Amount:</span>
+                    <span id="totalPrice">$229.97</span>
+                </div>
+                <button class="btn-primary btn-full mt-3" onclick="proceedToCheckout()">
+                    <i class="fa-solid fa-credit-card"></i> Proceed to Checkout
+                </button>
+                <a href="index.html" class="btn-secondary btn-full mt-2 text-center">
+                    <i class="fa-solid fa-arrow-left"></i> Continue Shopping
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <p>&copy; 2026 CodeAlpha Internship Project. All Rights Reserved.</p>
+            <p>Designed by Mintamir Mengistu</p>
+        </div>
+    </footer>
+
+    <!-- JS Files -->
+    <script src="js/cart.js"></script>
+    <script src="js/main.js"></script>
+<script src="js/cart.js"></script>
+</body>
+</html>

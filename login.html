@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShopAlpha - Login & Register</title>
+    <!-- CSS style file connection -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="auth-body">
+
+    <!-- Header / Navigation Bar -->
+    <header class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <i class="fa-solid fa-bag-shopping"></i> ShopAlpha
+            </a>
+            <a href="index.html" class="btn-secondary">
+                <i class="fa-solid fa-arrow-left"></i> Back to Home
+            </a>
+        </div>
+    </header>
+
+    <!-- Auth Container Box -->
+    <main class="auth-container">
+        <div class="auth-card">
+            
+            <!-- Tabs Header (Switch between Login & Register) -->
+            <div class="auth-tabs">
+                <button class="tab-btn active" id="loginTab" onclick="switchTab('login')">
+                    <i class="fa-solid fa-right-to-bracket"></i> Login
+                </button>
+                <button class="tab-btn" id="registerTab" onclick="switchTab('register')">
+                    <i class="fa-solid fa-user-plus"></i> Register
+                </button>
+            </div>
+
+            <!-- Login Form -->
+            <form id="loginForm" class="auth-form active" onsubmit="handleLogin(event)">
+                <h2>Welcome Back!</h2>
+                <p class="form-subtitle">Please enter your details to sign in to your account.</p>
+
+                <div class="input-group">
+                    <label for="loginEmail"><i class="fa-solid fa-envelope"></i> Email Address</label>
+                    <input type="email" id="loginEmail" placeholder="example@gmail.com" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="loginPassword"><i class="fa-solid fa-lock"></i> Password</label>
+                    <input type="password" id="loginPassword" placeholder="Enter your password" minlength="4" title="Password must be at least 4 characters long" required>
+                </div>
+
+                <button type="submit" class="btn-primary btn-full">
+                    <i class="fa-solid fa-right-to-bracket"></i> Login
+                </button>
+
+                <p class="switch-text">
+                    Don't have an account? <a href="#" onclick="switchTab('register')">Register here</a>
+                </p>
+            </form>
+
+            <!-- Registration Form (Initially Hidden) -->
+            <form id="registerForm" class="auth-form" onsubmit="handleRegister(event)">
+                <h2>Create an Account</h2>
+                <p class="form-subtitle">Sign up to become a member of our online store.</p>
+
+                <div class="input-group">
+                    <label for="regName"><i class="fa-solid fa-user"></i> Full Name</label>
+                    <input type="text" id="regName" placeholder="Mintamir Mengistu" pattern="[A-Za-z\s]+" title="Full name must contain letters and spaces only" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="regEmail"><i class="fa-solid fa-envelope"></i> Email Address</label>
+                    <input type="email" id="regEmail" placeholder="example@gmail.com" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="regPassword"><i class="fa-solid fa-lock"></i> Password</label>
+                    <input type="password" id="regPassword" placeholder="At least 4 characters" minlength="4" title="Password must be at least 4 characters long" required>
+                </div>
+
+                <button type="submit" class="btn-primary btn-full">
+                    <i class="fa-solid fa-user-plus"></i> Register
+                </button>
+
+                <p class="switch-text">
+                    Already have an account? <a href="#" onclick="switchTab('login')">Login here</a>
+                </p>
+            </form>
+
+        </div>
+    </main>
+
+    <!-- JavaScript File Connection -->
+    <script src="js/auth.js"></script>
+</body>
+</html>

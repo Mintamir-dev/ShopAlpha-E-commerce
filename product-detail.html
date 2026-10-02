@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details - ShopAlpha</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header class="navbar">
+        <div class="logo"><a href="index.html">ShopAlpha</a></div>
+        <nav>
+            <a href="index.html"><i class="fa-solid fa-house"></i> Home</a>
+            <a href="cart.html"><i class="fa-solid fa-cart-shopping"></i> Cart (<span id="cartCount">0</span>)</a>
+        </nav>
+    </header>
+
+    <main class="container" style="padding: 40px 20px; text-align: center;">
+        <div id="productDetailContainer">
+            <p>Loading product details...</p>
+        </div>
+    </main>
+
+    <script src="js/main.js"></script>
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const productId = urlParams.get('id');
+
+        async function loadSingleProduct() {
+            const container = document.getElementById("productDetailContainer");
+            if (!productId) {
+                container.innerHTML = "<h2>Product not found.</h2>";
+                return;
+            }
+
+            try {
+                const res = await fetch(`${API_BASE_URL}/products/${productId}`);
+                if (!res.ok) throw new Error("Failed to fetch product");
+                const product = await res.json();
+
+                container.innerHTML = `
+                    <div style="max-width: 600px; margin: 0 auto; border: 1px solid #e2e8f0; padding: 20px; border-radius: 8px;">
+                        <img src="${product.image_url || 'https://via.placeholder.com/300'}" style="max-width: 100%; height: 250px; object-fit: contain;">
+                        <h2>${product.title}</h2>
+                        <p style="color: #64748b; margin: 10px 0;">${product.description || ''}</p>
+                        <h3 style="color: #2563eb;">$${Number(product.price).toFixed(2)}</h3>
+                        <button class="btn-add-cart" onclick="addToCart(${product.id})" style="padding: 10px 20px; background: #16a34a; color: white; border: none; border-radius: 5px; cursor: pointer;">
+                            <i class="fa-solid fa-cart-plus"></i> Add to Cart
+                        </button>
+                    </div>
+                `;
+            } catch (err) {
+                container.innerHTML = "<h2>Error loading product details.</h2>";
+            }
+        }
+
+        document.addEventListener("DOMContentLoaded", loadSingleProduct);
+    </script>
+</body>
+</html>
